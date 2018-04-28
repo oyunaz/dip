@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<DialogPane headerText="Производную чего вы хотите искать ?" prefHeight="185.0" prefWidth="241.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DialogController">
+    <content>
+        <fx:define>
+            <ToggleGroup fx:id="problemChoiceGroup"/>
+        </fx:define>
+        <GridPane>
+            <RadioButton fx:id="sum" text="Суммы \ Разности" toggleGroup="$problemChoiceGroup"/>
+            <RadioButton fx:id="multiply" text="Произведения" GridPane.rowIndex="1" toggleGroup="$problemChoiceGroup"/>
+            <RadioButton fx:id="division" text="Деления" GridPane.rowIndex="2" toggleGroup="$problemChoiceGroup"/>
+            <RadioButton fx:id="complexFunc" text="Сложной функции" GridPane.rowIndex="3" toggleGroup="$problemChoiceGroup"/>
+        </GridPane>
+    </content>
+</DialogPane>
