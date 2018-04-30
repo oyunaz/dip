@@ -58,9 +58,9 @@ public class Controller {
 
         Optional<ButtonType> result = dialog.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            header.setVisible(false);                                        //кнопки главного меню делаются невидимыми
-            tutor.setVisible(false);
-            test.setVisible(false);
+//            header.setVisible(false);                                        //кнопки главного меню делаются невидимыми
+//            tutor.setVisible(false);
+//            test.setVisible(false);
             DialogController dialogController = fxmlLoader.getController();
             String choiceResult = dialogController.getSelectedChoice();    //обработка выбора
             switch (choiceResult) {
