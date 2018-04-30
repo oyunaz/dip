@@ -10,7 +10,7 @@ public class Generate {
     static {
 
         table.put(0, "C");
-        table.put(1, "x^n");
+        table.put(1, "x^C");
         table.put(2, "C^x");
         table.put(3, "e^x");
         table.put(4, "ln(x)");
