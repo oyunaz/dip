@@ -13,6 +13,10 @@ public class Controller {
     private GridPane mainGridPane;
     @FXML
     private Label problem1;
+    @FXML
+    private Label problem2;
+    @FXML
+    private Label problem3;
 
     private Generate generate;
 
@@ -42,14 +46,36 @@ public class Controller {
         if (result.isPresent() && result.get() == ButtonType.OK) {
             DialogController dialogController = fxmlLoader.getController();
             String choiceResult = dialogController.getSelectedChoice();    //обработка выбора
-            if (choiceResult.equals("sum")) {                              //если была выбрана сумма
-                try {
-                    problem1.setText(generate.generateSum());              //генерация задачи с суммой
-                } catch (NullPointerException e) {
-                    problem1.setText("null");
-                }
+            switch (choiceResult) {
+                case "sum":                               //если была выбрана сумма
+                   generateProblemsSum();
+                   break;
+                case "multiply" :
+                    generateProblemMulti();
+                    break;
             }
         }
     }
 
+    public void generateProblemsSum(){                  //генерация трех задач с суммой
+        try {
+            problem1.setText(generate.generateSum());
+            problem2.setText(generate.generateSum());
+            problem3.setText(generate.generateSum());
+        } catch (NullPointerException e) {
+            problem1.setText("null");
+        }
+    }
+
+    public void generateProblemMulti(){
+        try {
+            problem1.setText(generate.generateMultiply());
+            problem2.setText(generate.generateMultiply());
+            problem3.setText(generate.generateMultiply());
+        }catch (NullPointerException e){
+            problem1.setText("null");
+        }
+    }
 }
+
+
