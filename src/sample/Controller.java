@@ -33,6 +33,8 @@ public class Controller {
 
     private Solution solution;
 
+    public static String mapleFunction;
+
     public void initialize() {
         generate = new Generate();
         solution = new Solution();
@@ -65,17 +67,20 @@ public class Controller {
             String choiceResult = dialogController.getSelectedChoice();    //обработка выбора
             switch (choiceResult) {
                 case "sum":                               //если была выбрана сумма
+
                     try {
                         problem1.setText(generate.generateSum());
+                        //  mapleFunction = problem1.getText();
                         answer1.setVisible(true);
                     } catch (NullPointerException e) {
                         problem1.setText("null");
                     }
-                   break;
-                case "multiply" :
+
+                    break;
+                case "multiply":
                     try {
                         problem1.setText(generate.generateMultiply());
-                    }catch (NullPointerException e){
+                    } catch (NullPointerException e) {
                         problem1.setText("null");
                     }
                     break;
@@ -84,33 +89,13 @@ public class Controller {
     }
 
     @FXML
-    public void acceptAnswers(){
+    public void acceptAnswers() {
         String answer = answer1.getText();
         String rightAnswer = solution.getSolution(problem1.getText());
-        if(answer.equals(rightAnswer)){
+        if (answer.equals(rightAnswer)) {
             evaluation1.setText("right !");
         }
     }
-
-//    public void generateProblemsSum(){                  //генерация трех задач с суммой
-//        try {
-//            problem1.setText(generate.generateSum());
-//            problem2.setText(generate.generateSum());
-//            problem3.setText(generate.generateSum());
-//        } catch (NullPointerException e) {
-//            problem1.setText("null");
-//        }
-//    }
-//
-//    public void generateProblemMulti(){
-//        try {
-//            problem1.setText(generate.generateMultiply());
-//            problem2.setText(generate.generateMultiply());
-//            problem3.setText(generate.generateMultiply());
-//        }catch (NullPointerException e){
-//            problem1.setText("null");
-//        }
-//    }
 
 }
 

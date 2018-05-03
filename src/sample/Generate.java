@@ -53,13 +53,13 @@ public class Generate {
                 sign = "-";
 
             if (i == n) {
-                func += " )'=";
+                func += "";
             } else {
                 func += sign;
             }
             function += func;
         }
-        return "f(x)' = " + "( " + function;
+        return function;
     }
 
     public String generateMultiply(){
@@ -81,13 +81,13 @@ public class Generate {
             String sign = "*";
 
             if (i == n) {
-                func += " )'=";
+                func += "";
             } else {
                 func += sign;
             }
             function += func;
         }
-        return "f(x)' = " + "( " + function;
+        return function;
 
     }
 

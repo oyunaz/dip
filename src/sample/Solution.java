@@ -28,6 +28,7 @@ public class Solution {
 
         } catch (MapleException e) {
             System.out.println("An exception occurred\n");
+            e.printStackTrace();
             return "null";
         }
 
