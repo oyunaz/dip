@@ -84,6 +84,12 @@ public class Controller {
                         problem1.setText("null");
                     }
                     break;
+                case "division":
+                    try {
+                        problem1.setText(generate.generateDivision());
+                    }catch (NullPointerException e){
+                        problem1.setText("null");
+                    }
             }
         }
     }

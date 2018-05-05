@@ -39,7 +39,7 @@ public class Generate {
             m += random.nextInt(17);                 // номер в таблице
             func = table.get(m).toString();
 
-            if(func.contains("C")){
+            if (func.contains("C")) {
                 int l = random.nextInt(100);
                 func = func.replace("C", String.valueOf(l));  //замена С
             }
@@ -62,7 +62,7 @@ public class Generate {
         return function;
     }
 
-    public String generateMultiply(){
+    public String generateMultiply() {
         Random random = new Random();
         int n = 2 + random.nextInt(5 - 2);                    //кол-во слагаемых
         String func;
@@ -73,7 +73,7 @@ public class Generate {
             m += random.nextInt(17);                 // номер в таблице
             func = table.get(m).toString();
 
-            if(func.contains("C")){
+            if (func.contains("C")) {
                 int l = random.nextInt(100);
                 func = func.replace("C", String.valueOf(l));  //замена С
             }
@@ -91,4 +91,56 @@ public class Generate {
 
     }
 
+    private String generate(){
+        Random random = new Random();
+        int n = 1 + random.nextInt(3);                    //кол-во слагаемых
+        String func;
+        String function1 = "";
+        int i;
+        for (i = 0; i <= n; i++) {
+            int m = 0;
+            m += random.nextInt(17);                 // номер в таблице
+            func = table.get(m).toString();
+
+            if (func.contains("C")) {
+                int l = random.nextInt(100);
+                func = func.replace("C", String.valueOf(l));  //замена С
+            }
+
+            String sign = "";
+
+            int s = 0;
+            s += random.nextInt(2);         // генерация знака
+
+            switch (s) {
+                case 0:
+                    sign = "+";
+                    break;
+                case 1:
+                    sign = "-";
+                    break;
+                case 2:
+                    sign = "*";
+                    break;
+
+            }
+            if (i == n) {
+                func += "";
+            } else {
+                func += sign;
+            }
+            function1 += func;
+        }
+        return function1;
+    }
+
+    public String generateDivision() {
+
+        String function1 = generate();
+        String function2 = generate();
+
+        String function = "(" + function1 + ")" + "/" + "(" + function2 + ")";
+
+        return function;
+    }
 }
