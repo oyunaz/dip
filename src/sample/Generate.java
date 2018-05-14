@@ -30,7 +30,7 @@ public class Generate {
 
     public String generateSum() {
         Random random = new Random();
-        int n = 2 + random.nextInt(5 - 2);                    //кол-во слагаемых
+        int n = 2 + random.nextInt(4);                    //кол-во слагаемых
         String func;
         String function = "";
         int i;
@@ -141,6 +141,19 @@ public class Generate {
 
         String function = "(" + function1 + ")" + "/" + "(" + function2 + ")";
 
+        return function;
+    }
+
+    public String generateComplex(){
+        Random random = new Random();
+        int n = 1 + random.nextInt(17);
+        int m = 1 + random.nextInt(17);
+        String func1 = table.get(n).toString();
+        String func2 = table.get(m).toString();
+        String function = "";
+        if(func1.contains("X")){
+          function =  func1.replace("X", func2);
+        }
         return function;
     }
 }
