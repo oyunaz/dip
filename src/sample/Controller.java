@@ -90,6 +90,12 @@ public class Controller {
                     }catch (NullPointerException e){
                         problem1.setText("null");
                     }
+                case "complexFunc":
+                    try{
+                        problem1.setText(generate.generateComplex());
+                    }catch (NullPointerException e){
+                        problem1.setText("null");
+                    }
             }
         }
     }
