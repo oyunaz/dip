@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import sun.plugin.javascript.navig4.LayerArray;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -67,10 +66,8 @@ public class Controller {
             String choiceResult = dialogController.getSelectedChoice();    //обработка выбора
             switch (choiceResult) {
                 case "sum":                               //если была выбрана сумма
-
                     try {
                         problem1.setText(generate.generateSum());
-                        //  mapleFunction = problem1.getText();
                         answer1.setVisible(true);
                     } catch (NullPointerException e) {
                         problem1.setText("null");
@@ -80,6 +77,7 @@ public class Controller {
                 case "multiply":
                     try {
                         problem1.setText(generate.generateMultiply());
+                        answer1.setVisible(true);
                     } catch (NullPointerException e) {
                         problem1.setText("null");
                     }
@@ -87,12 +85,14 @@ public class Controller {
                 case "division":
                     try {
                         problem1.setText(generate.generateDivision());
+                        answer1.setVisible(true);
                     }catch (NullPointerException e){
                         problem1.setText("null");
                     }
                 case "complexFunc":
                     try{
                         problem1.setText(generate.generateComplex());
+                        answer1.setVisible(true);
                     }catch (NullPointerException e){
                         problem1.setText("null");
                     }

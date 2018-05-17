@@ -32,6 +32,6 @@ public class DialogController {
         if (selectedRadio == complexFunc)
             return "complexFunc";
 
-        return selectedRadio.getText();
+        return selectedRadio.getId();
     }
 }

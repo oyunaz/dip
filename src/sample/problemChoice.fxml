@@ -15,7 +15,7 @@
             <ToggleGroup fx:id="problemChoiceGroup"/>
         </fx:define>
         <GridPane>
-            <RadioButton fx:id="sum" text="Суммы \ Разности" toggleGroup="$problemChoiceGroup"/>
+            <RadioButton fx:id="sum" text="Суммы \ Разности" GridPane.rowIndex="0" toggleGroup="$problemChoiceGroup"/>
             <RadioButton fx:id="multiply" text="Произведения" GridPane.rowIndex="1" toggleGroup="$problemChoiceGroup"/>
             <RadioButton fx:id="division" text="Деления" GridPane.rowIndex="2" toggleGroup="$problemChoiceGroup"/>
             <RadioButton fx:id="complexFunc" text="Сложной функции" GridPane.rowIndex="3" toggleGroup="$problemChoiceGroup"/>

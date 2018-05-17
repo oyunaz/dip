@@ -36,7 +36,7 @@ public class Generate {
         int i;
         for (i = 0; i <= n; i++) {
             int m = 0;
-            m += random.nextInt(17);                 // номер в таблице
+            m += random.nextInt(16);                 // номер в таблице
             func = table.get(m).toString();
 
             if (func.contains("C")) {
@@ -64,13 +64,13 @@ public class Generate {
 
     public String generateMultiply() {
         Random random = new Random();
-        int n = 2 + random.nextInt(5 - 2);                    //кол-во слагаемых
+        int n = 2 + random.nextInt(4);                    //кол-во слагаемых
         String func;
         String function = "";
         int i;
         for (i = 0; i <= n; i++) {
             int m = 0;
-            m += random.nextInt(17);                 // номер в таблице
+            m += random.nextInt(16);                 // номер в таблице
             func = table.get(m).toString();
 
             if (func.contains("C")) {
@@ -99,8 +99,8 @@ public class Generate {
         int i;
         for (i = 0; i <= n; i++) {
             int m = 0;
-            m += random.nextInt(17);                 // номер в таблице
-            func = table.get(m).toString();
+            m += random.nextInt(16);                 // номер в таблице
+            func = table.get(m).toString();                 //NullPointerException
 
             if (func.contains("C")) {
                 int l = random.nextInt(100);
@@ -110,7 +110,7 @@ public class Generate {
             String sign = "";
 
             int s = 0;
-            s += random.nextInt(2);         // генерация знака
+            s += random.nextInt(3);         // генерация знака
 
             switch (s) {
                 case 0:
@@ -146,13 +146,17 @@ public class Generate {
 
     public String generateComplex(){
         Random random = new Random();
-        int n = 1 + random.nextInt(17);
-        int m = 1 + random.nextInt(17);
+        int n = 1 + random.nextInt(16);
+        int m = 1 + random.nextInt(16);
         String func1 = table.get(n).toString();
         String func2 = table.get(m).toString();
         String function = "";
-        if(func1.contains("X")){
-          function =  func1.replace("X", func2);
+        if(func1.contains("x")){
+            function =  func1.replace("x", func2);
+            if (function.contains("C")) {
+                int l = random.nextInt(100);
+                function = function.replace("C", String.valueOf(l));  //замена С
+            }
         }
         return function;
     }
