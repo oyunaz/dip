@@ -15,8 +15,9 @@ public class DialogController {
     private RadioButton division;
     @FXML
     private RadioButton complexFunc;
-
     @FXML
+    private RadioButton randomFunc;
+
 
     public String getSelectedChoice() {
         RadioButton selectedRadio = (RadioButton) problemChoiceGroup.getSelectedToggle();
@@ -31,6 +32,8 @@ public class DialogController {
             return "division";
         if (selectedRadio == complexFunc)
             return "complexFunc";
+        if (selectedRadio == randomFunc)
+            return "randomFunc";
 
         return selectedRadio.getId();
     }
